@@ -10,14 +10,18 @@ function popitem() {
 }
 popitem()
 document.getElementById("Enter").onclick= function() {
+  var auction = new Array()
   var itempackage = {}
     itempackage.number = document.getElementById('numberitem').value
     itempackage.name = document.getElementById('itemname').value
     itempackage.desc = document.getElementById('itemdesc').value
     itempackage.value = document.getElementById('itemvalue').value
     itempackage.cost = document.getElementById('itemcost').value
-  alert (itempackage.number + " " + itempackage.name + " " + itempackage.desc + " " + itempackage.value + " " + itempackage.cost);
-
+    
+    alert (auction[0].number)
+    alert (itempackage.number + " " + itempackage.name + " " + itempackage.desc + " " + itempackage.value + " " + itempackage.cost);
+    
 }
+
 
 
