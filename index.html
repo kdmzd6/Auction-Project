@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Todo</title>
+<meta name="description" content="Buy Stuff, Real Cheap, Silently">
+<link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="header">
+    <div id="logo">You have things to buy: Buy It Later?</div>
+  </div>
+
+  <div id="widgets">
+    <p> Item Number <t></t> Item Name <t></t> Item Description <t></t> Starting Bid </p> 
+    <div class="Item">
+
+      <input type="textbox" size="5" maxlength="4" data-bind="value: itemNumber, stream: 'itemNumber'"/>
+      <input type="textbox" size="16" maxlength="15" data-bind="value: itemName, stream: 'itemName'"/>
+      <textarea rows=0 cols=20 data-bind="value: itemDescription, stream: 'itemDescription'"> </textarea>
+      <input type="textbox" size="9" maxlength="8" data-bind="value: startingBid, stream: 'startingBid'"/> 
+      <span data-bind="click: close" class="closebox">X</span>
+    </div>
+
+    <div class="Seat">
+      <input type="textbox" data-bind="value: name, stream: 'name'"/>
+      <span data-bind="click: close" class="closebox">X</span>
+    </div>
+
+    <div class="Auction">
+      Welcome to the <input type="textbox" data-bind="value: title, stream: 'title'"/> Auction
+      <div>
+        <a href="#" data-bind="click: addSeat">Add Seat</a>|
+        <a href="#" data-bind="click: addItem">Add Item</a>|
+      </div>
+      <p>Here are a list of Items</p>
+      <div data-bind="foreach: items" class="tasks">
+        <div data-bind="dispatch: type" class="widget"></div>
+      </div>
+      <p>Here are a list of Buyers</p>
+      <div data-bind="foreach: seats" class="tasks">
+        <div data-bind="dispatch: type" class="widget"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div data-bind="dispatch: type" class="widget"></div>
+  <script type="text/javascript" src="knockout.js"></script>
+  <script type="text/javascript" src="https://js.simperium.com/v0.1/"></script>
+  <script type="text/javascript" src="qs-simperium.js"></script>
+  <script type="text/javascript" src="auctions.js"></script>
+</body>
+</html>
